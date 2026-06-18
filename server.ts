@@ -4,11 +4,24 @@ import fs from "fs";
 import { MongoClient, ObjectId } from "mongodb";
 import { createServer as createViteServer } from "vite";
 import dotenv from "dotenv";
+import cors from "cors";
 
 dotenv.config();
 
 const app = express();
 const PORT = Number(process.env.PORT) || 3000;
+
+app.use(
+    cors({
+        origin: [
+            "http://localhost:5173",
+            "http://localhost:3000",
+            "https://she-can-foundation-flame-one.vercel.app",
+        ],
+        methods: ["GET", "POST", "PATCH", "DELETE"],
+        credentials: true,
+    }),
+);
 
 app.use(express.json());
 
@@ -269,11 +282,9 @@ app.post("/api/submissions", async (req, res) => {
             typeof message !== "string" ||
             message.trim().length < 5
         ) {
-            return res
-                .status(400)
-                .json({
-                    error: "Your message must be at least 5 characters long.",
-                });
+            return res.status(400).json({
+                error: "Your message must be at least 5 characters long.",
+            });
         }
 
         const newItem = {
