@@ -1,0 +1,6 @@
+{
+  "name": "She Can Foundation Page",
+  "description": "A professional webpage with a dynamic contact form, form validation, MongoDB database integration, and a secure admin panel for submissions management.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
