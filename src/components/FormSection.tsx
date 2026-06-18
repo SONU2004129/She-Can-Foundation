@@ -79,7 +79,7 @@ export default function FormSection({
             const API_URL =
                 import.meta.env.MODE === "development"
                     ? "http://localhost:3000"
-                    : "https://she-can-foundation-5uvu.onrender.com";
+                    : "https://she-can-foundation-l03c.onrender.com";
 
             const response = await fetch(`${API_URL}/api/submissions`, {
                 method: "POST",
