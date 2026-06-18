@@ -2,7 +2,26 @@ node_modules/
 build/
 dist/
 coverage/
-.DS_Store
-*.log
+
+# Environment variables
 .env*
 !.env.example
+
+# Logs
+*.log
+logs/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Vercel
+.vercel/
+
+# Temporary files
+*.tmp
+*.temp
